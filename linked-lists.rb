@@ -19,3 +19,16 @@ class Node
     end
 end
 
+class LinkedList
+    def initialize(value)
+        @head = Node.new(value, nil)
+    end
+
+    def add_to_list(value)
+        current_node = @head
+        while current_node.next != nil
+            current_node = current_node.next
+        end
+        current_node.next = Node.new(value, nil)
+    end
+end
