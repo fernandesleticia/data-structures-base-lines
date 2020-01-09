@@ -31,4 +31,17 @@ class LinkedList
         end
         current_node.next = Node.new(value, nil)
     end
+
+    def delete(value)
+        current_node.next = @head
+        if current_node.value = value
+            @head = current_node.next
+        else
+            while (current_node.next != nil) && (current_node.next.val != val)
+                current_node = current_node.next
+            end
+            unless current_node.next == nil
+                current_node.next = current_node.next.next
+            end
+    end
 end
