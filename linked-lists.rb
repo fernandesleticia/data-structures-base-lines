@@ -76,4 +76,10 @@ Insertion and deletion is easy and it’s easy to building linear data structure
 
 On the other hand, its memory is intensive because each element holds a value and a pointer, its takes longer to access an element
 and hard to reverse traverse
+
+Time Complexity:
+Access: O(n)
+Search: O(n)
+Insert: O(1)
+Remove: O(1)
 '''

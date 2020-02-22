@@ -1,5 +1,5 @@
-# data-structures-base-lines
-a bunch of algorithms to deal with data structures 
+## Data Structures Base Lines
+A bunch of algorithms to deal with data structures 
 
 
 # references
