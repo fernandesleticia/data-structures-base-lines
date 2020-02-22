@@ -12,3 +12,5 @@ A bunch of algorithms to deal with data structures
 * Mastering data structures in Ruby — Stacks, by Ale Miralles. Found it [here](https://medium.com/amiralles/stacks-are-a-special-kind-of-linked-lists-that-allow-us-to-efficiently-store-retrieve-data-in-last-9efab58fd100)  
 
 * Mastering data structures in Ruby — Queues, by Ale Miralles. Found it [here](https://medium.com/amiralles/mastering-data-structures-in-ruby-queues-350a89fa8f79)
+
+* Mastering data structures in Ruby — Hash Tables, by Ale Miralles. Found it [here](https://medium.com/amiralles/mastering-data-structures-in-ruby-hash-tables-2f74ae0a3fe0)
