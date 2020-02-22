@@ -1,16 +1,13 @@
-''' Linked Lists is a data structure where each element is 
-a node containing two pieces of information (for a single linked list):
-1) its data 
-2) a reference to the next piece of data in the list
+''' 
+A Linked List is a linear collection of data elements, called nodes, each pointing to the next node by means of a pointer. 
+It is a data structure consisting of a group of nodes which together represent a sequence.
 
-For a doubly linked list it holds 3 pieces of information:
-1) a reference to the previous piece of data in the list 
-2) its data 
-3) a reference to the next piece of data in the list. 
+Singly-linked list: linked list in which each node points to the next node and the last node points to null
 
-The entry point to the linked list is the head, 
-and the only way to get through the list is by iterating 
-until you find the item you want '''
+Doubly-linked list: linked list in which each node has two pointers, p and n, such that p points to the previous node and n points to the next node; the last nodes n pointer points to null
+
+Circular-linked list: linked list in which each node points to the next node and the last node points back to the first node 
+'''
 
 
 # This class creates a node object with a value and a next which will point to the next node 
