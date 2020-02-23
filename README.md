@@ -22,3 +22,5 @@ A bunch of algorithms to deal with data structures
 * Mastering data structures in Ruby — Hash Tables, by Ale Miralles. Found it [here](https://medium.com/amiralles/mastering-data-structures-in-ruby-hash-tables-2f74ae0a3fe0)
 
 * Mastering data structures in Ruby — Sets, by Ale Miralles. Found it [here](https://medium.com/amiralles/mastering-data-structures-in-ruby-sets-5d674169cd2d)
+
+* Mastering data structures in Ruby — Graphs. Fount it [here](https://medium.com/amiralles/mastering-data-structures-in-ruby-graphs-caa5892d50b1)
