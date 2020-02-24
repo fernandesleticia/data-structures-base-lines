@@ -1,10 +1,10 @@
 '''
-A Binary Tree is a tree data structure in which each node has at most two children, which are referred to as the left child and right child
-
-Full Tree: a tree in which every node has either 0 or 2 children
-Perfect Binary Tree: a binary tree in which all interior nodes have two children and all leave have the same depth
-Complete Tree: a binary tree in which every level except possibly the last is full and all nodes in the last level are as far left as possible
-
+Binary search trees, or BTSs for short, 
+are data structures designed to perform fast lookups on large datasets. 
+The subject of this post is AVL trees, a special kind of self-balancing 
+BST named after its creators Adelson-Velskii and Landis where the height 
+difference between the left and right subtrees (the balance factor) is always 
+in the range (-1..1) giving us O(log2 n) lookups
 '''
 
 # Adds a new node to the tree and reset its root
@@ -15,7 +15,7 @@ end
 
 # This method looks recursively to find the right spot for the given key. 
 # Once the spot is found and the new node is inserted, 
-# it calls the balance method to ensure that the tree remains balanced
+# it calls the balance method to ensure that the tree remains balanced.
 # O(log2 n)
 def insert_and_balance node, key, data = nil
     return Node.new key, data unless node    
@@ -27,7 +27,7 @@ def insert_and_balance node, key, data = nil
     else 
         node.data    = data
         node.deleted = false
-    end    
+    end   
     
     balance(node)
 end
@@ -65,9 +65,9 @@ def search key
     return node unless node&.deleted
 end
 
-# Searches for a key in the subtree that starts at the provided node. 
-# This method starts the search at a given node and descends (recursively) moving left or 
-# right based on the key’s values until it finds the key or gets to the end of the subtree
+# Searches for a key in the subtree that starts at the provided node
+# This method starts the search at a given node and descends (recursively) moving left or right based 
+# on the key’s values until it finds the key or gets to the end of the subtree
 # O(log2 n)
 def search_rec node, key
     return nil unless node
@@ -76,13 +76,15 @@ def search_rec node, key
     return node        
 end
 
-# This method calculates and sets the height for the specified node based on 
-# the heights of their left and right subtrees
+# This method calculates and sets the height for the specified node based 
+# on the heights of their left and right subtrees
 # O(1)
 def set_height node
     lh  = height node&.left
     rh  = height node&.right
-    max = lh > rh ? lh : rh    node.height = 1 + max
+    max = lh > rh ? lh : rh    
+    
+    node.height = 1 + max
 end
 
 # This method performs a right rotation
@@ -132,7 +134,7 @@ def print_rec node, indent
         puts "x".rjust(indent * 4, " ")
         return
     end    
-
+    
     puts_key node, indent
     print_rec node.left, indent + 1
     print_rec node.right, indent + 1
@@ -147,4 +149,3 @@ def puts_key node, indent
         puts txt.rjust(indent * 4, " ")
     end
 end
-
