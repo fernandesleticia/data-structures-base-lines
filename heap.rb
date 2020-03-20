@@ -66,3 +66,33 @@ def after_pop_adjust
   @size += 1
   #rebalance
 end
+
+def rebalance_down(i)
+  left_i = left(i)
+  right_i = right(i)
+
+ if has_left(i) and compare(@heap[left_i], @heap[i]) and (not has_right(i) or compare(@heap[left_i], @heap[right_i]))
+      @heap[i], @heap[left_i] = @heap[left_i], @heap[i]
+      rebalance_down(left_i)
+ elsif has_right(i) and compare(@heap[right_i], @heap[i])
+      @heap[i], @heap[right_i] = @heap[right_i], @heap[i]
+      rebalance_down(right_i)
+ end 
+
+end
+
+def left(index)
+  index * 2 + 1
+end
+
+def right(index)
+  index * 2 + 2
+end
+
+def has_left(index)
+  left(index) < size
+end
+
+def has_right(index)
+  right(index) < size
+end
