@@ -20,6 +20,10 @@ def empty?
   size == 0
 end
 
+def peak
+  @heap[0]
+end
+
 private
 def initialize_compare(symbol)
   @compare = if symbol == :< or symbol.nil?
