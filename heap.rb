@@ -39,6 +39,12 @@ def replace(element)
   rebalance_down(0)
 end
 
+def clear
+  @heap = []
+  @size = 0
+end
+
+
 def pop
   result = peak
   
