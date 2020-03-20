@@ -10,17 +10,19 @@ In a min heap,
 the keys of parent nodes are less than or equal to those of the children and the lowest key is in the root node
 '''
 
-def initialize(compare_symbol = :<, storage = [], &compare_fn)
-  @heap = storage
+def initialize(compare_symbol = :<, heap_storage = [])
+  @heap = heap_storage
   @size = 0
-  initialize_compare(compare_symbol, &compare_fn)
+  initialize_compare(compare_symbol)
+end
+
+def empty?
+  size == 0
 end
 
 private
-def initialize_compare(symbol, &fn)
-  @compare = if block_given?
-    fn
-  elsif symbol == :< or symbol.nil?
+def initialize_compare(symbol)
+  @compare = if symbol == :< or symbol.nil?
     lambda{|a, b| a < b}
   elsif symbol == :>
     lambda{|a, b| a > b}
