@@ -16,6 +16,8 @@ def initialize(compare_symbol = :<, heap_storage = [])
   initialize_compare(compare_symbol)
 end
 
+attr_reader :size
+
 def empty?
   size == 0
 end
@@ -30,6 +32,11 @@ def add(element)
   after_add_adjust
   
   self
+end
+
+def replace(element)
+  @heap[0] = element
+  rebalance_down(0)
 end
 
 def pop
