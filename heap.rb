@@ -13,4 +13,18 @@ the keys of parent nodes are less than or equal to those of the children and the
 def initialize(compare_symbol = :<, storage = [], &compare_fn)
   @heap = storage
   @size = 0
+  initialize_compare(compare_symbol, &compare_fn)
+end
+
+private
+def initialize_compare(symbol, &fn)
+  @compare = if block_given?
+    fn
+  elsif symbol == :< or symbol.nil?
+    lambda{|a, b| a < b}
+  elsif symbol == :>
+    lambda{|a, b| a > b}
+  else
+    raise ArgumentError.new("The comparison symbol must be provided correctly ( :> or :< )")
+  end  
 end
