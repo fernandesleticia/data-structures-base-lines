@@ -5,6 +5,9 @@ Full Tree: a tree in which every node has either 0 or 2 children
 Perfect Binary Tree: a binary tree in which all interior nodes have two children and all leave have the same depth
 Complete Tree: a binary tree in which every level except possibly the last is full and all nodes in the last level are as far left as possible
 
+Binary search trees, or BTSs for short, are data structures designed to perform fast lookups on large datasets. The subject of this post is AVL trees, a special kind of self-balancing BST named after its creators Adelson-Velskii and Landis where the height difference between the left and right subtrees (the balance factor) is always in the range (-1..1) giving us O(log2 n) lookups.
+
+On AVL trees nodes arranged in descendant order, and they can’t contain duplicate keys. These properties are important because most of its methods rely on them.
 '''
 
 # Adds a new node to the tree and reset its root
