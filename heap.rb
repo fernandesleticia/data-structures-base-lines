@@ -44,7 +44,6 @@ def clear
   @size = 0
 end
 
-
 def pop
   result = peak
   
@@ -63,6 +62,10 @@ def initialize_compare(symbol)
   else
     raise ArgumentError.new("The comparison symbol must be provided correctly ( :> or :< )")
   end  
+end
+
+def compare(a, b)
+  @compare.call(a, b)
 end
 
 def after_pop_adjust
