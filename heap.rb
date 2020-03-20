@@ -24,6 +24,12 @@ def peak
   @heap[0]
 end
 
+def add(element)
+  @heap[@size] = element
+  @size += 1
+  self
+end
+
 private
 def initialize_compare(symbol)
   @compare = if symbol == :< or symbol.nil?
