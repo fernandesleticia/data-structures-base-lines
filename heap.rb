@@ -26,11 +26,22 @@ end
 
 def add(element)
   @heap[@size] = element
-  @size += 1
+  
+  after_add_adjust
+  
   self
 end
 
+def pop
+  result = peak
+  
+  after_pop_adjust
+
+  result
+end
+
 private
+
 def initialize_compare(symbol)
   @compare = if symbol == :< or symbol.nil?
     lambda{|a, b| a < b}
@@ -39,4 +50,19 @@ def initialize_compare(symbol)
   else
     raise ArgumentError.new("The comparison symbol must be provided correctly ( :> or :< )")
   end  
+end
+
+def after_pop_adjust
+  if size > 1
+    @size -= 1
+    @heap[0] = @heap[@size]
+    #rebalance
+  else
+    @size = 0 
+  end 
+end
+
+def after_pop_adjust
+  @size += 1
+  #rebalance
 end
