@@ -3,7 +3,7 @@
 tree = [5, [2, [5], [4]], [3]]
 def height(tree)
     return 0 unless tree.length > 1
-    get_height(tree) 
+    get_height(tree) - 1 
 end
 
 def get_height(tree)
